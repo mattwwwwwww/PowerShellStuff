@@ -3,7 +3,7 @@
 
 ## Running DFIR-Deployment Prerequisites:
 
-To run DFIR-Deploymentv5.ps1 the follow prerequisites must be created and input:
+To run DFIR-Deployment-Enhancedv6.ps1 the follow prerequisites must be created and input:
 
 1. Open EncryptCredentialsV1.ps1 and update the pathway for the following to a valid filepath. This will create the credential file for the DFIR script to reference. Run this script.
   ```sh
@@ -13,16 +13,17 @@ To run DFIR-Deploymentv5.ps1 the follow prerequisites must be created and input:
 2. Open DFIR-Deploymentv5.ps1 and update the following pathways to valid pathways in your system.
   ```sh
   # This will be the Config file that was created using the above script:
-  $ImportCreds = Import-Clixml -Path "C:\PATHWAY\TO\Config.xml"
+  $ImportCreds = Import-Clixml -Path "C:\Pathway\ToConfig\Config.xml"
 
-  # This will be the OU that your computers are assigned too. Enter in the DistinquishedName:
+  # This will be the OU that your computers are assigned too. Enter in the DistinquishedName.
+  # DistinquishedName can be obtained easily on ADSI Edit whilst on your DC.
   $OUComs = Get-ADObject -Identity "OU=Domain Computers,DC=ThroughTheTrees,DC=com"
 
-  # This will be the pathway to your DFIR Script (There are 4 input pathway variables):
-  $InputPathway = "C:\PATHWAY\TO\DFIR-Script.ps1"
+  # This will be the pathway to your DFIR Scripts:
+  $ScriptObjects = "C:\Pathway\ToScripts\ScriptDirectory\"
 
   # This is where log files will output to:
-  $LogPathway = "C:\PATHWAY\TO\LOGFILES\"
+  $LogPathway = "C:\Pathway\ToLogOutput\"
 
   ```
 

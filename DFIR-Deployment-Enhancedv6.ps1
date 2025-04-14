@@ -15,8 +15,6 @@ function Remote-ExecuteDFIR
     PS> DFIR-Deploymentv5.ps1
     #>
 
-    [CmdletBinding()]
-
     # Specify the pathway to the config file here:
     $ImportCreds = Import-Clixml -Path "C:\PATHWAY\TO\Config.xml"
 

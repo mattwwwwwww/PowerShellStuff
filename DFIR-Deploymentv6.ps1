@@ -50,7 +50,7 @@ function Remote-ExecuteDFIR
             try 
             {
                 Write-Verbose "Attempting remote connection to: $Com.Name"
-                Invoke-Command -ComputerName $Com.DNSHostName -ScriptBlock $ScriptBlockInput -Credential $ImportCreds -Authentication Credssp -AsJob -JobName $MyComs.DNSHostName 
+                Invoke-Command -ComputerName $Com.DNSHostName -ScriptBlock $ScriptBlockInput -Credential $ImportCreds -Authentication Credssp -AsJob -JobName $Com.DNSHostName 
             }    
             catch 
             {

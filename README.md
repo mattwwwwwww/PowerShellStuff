@@ -18,7 +18,7 @@ To run DFIR-Deploymentv5.ps1 the follow prerequisites must be created and input:
   # This will be the OU that your computers are assigned too. Enter in the DistinquishedName:
   $OUComs = Get-ADObject -Identity "OU=Domain Computers,DC=ThroughTheTrees,DC=com"
 
-  # This will be the pathway to your DFIR Script:
+  # This will be the pathway to your DFIR Script (There are 4 input pathway variables):
   $InputPathway = "C:\PATHWAY\TO\DFIR-Script.ps1"
 
   # This is where log files will output to:

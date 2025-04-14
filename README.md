@@ -32,12 +32,12 @@ To run DFIR-Deploymentv5.ps1 the follow prerequisites must be created and input:
 The scheduled task needs to be configured to the following:
 
 #### General Settings:
-Run Whether user is logged on or not
-Run with highest privileges
+1. Run Whether user is logged on or not
+2. Run with highest privileges
 
 #### Action Settings:
-Program/Script: "PowerShell.exe"
-Add Arguments "-ExecutionPolicy Bypass" -File "C:\Pathway\To\DFIR\DFIR.ps1" -Verb RunAs
+1. Program/Script: "PowerShell.exe"
+2. Add Arguments "-ExecutionPolicy Bypass" -File "C:\Pathway\To\DFIR\DFIR.ps1" -Verb RunAs
 
 #### Condition:
 Wake the computer to run this task

@@ -11,7 +11,7 @@ function Remote-ExecuteDFIR
     Execute the script with Administration Privileges.
     Ensure that an encrypted credential file exists in the location specified in the $InputCreds variable.
     Ensure that all necessary filepaths are hard coded. 
-    If a valid config file doesn't exist, you can create one with the "SecureConfig.ps1" script.
+    If a valid config file doesn't exist, you can create one with the "EncryptCredentialsV1.ps1" script.
     PS> DFIR-Deploymentv5.ps1
     #>
 

@@ -8,9 +8,9 @@ function Remote-ExecuteDFIR
         $MyComs = Get-ADComputer -SearchBase "OU=Domain Computers,DC=Domain ..." -filter * | Where-Object {$_.Name -imatch "WK10"}
 
         # Specify where your log files will output too:
-        $LogPathway = "C:\PATHWAY\TO\LOGFILES\"
+        $LogPathway = "C:\PATHWAY\TO\LogFiles\"
 
-        $ScriptObjects = Get-ChildItem -Path "C\ProgramData\DFIR\Core" | Where-Object {$_.Name -imatch "Enhanced-DFIR-Script"}
+        $ScriptObjects = Get-ChildItem -Path "C\PATHWAY\TO\ScriptsFolder" | Where-Object {$_.Name -imatch "Enhanced-DFIR-Script"}
 
     }
     catch {
@@ -75,7 +75,7 @@ function Remote-ExecuteDFIR
     }
     finally{
         foreach($Session in $Sessions){
-            & Copy-Item -FromSession $Session -Path "C:\ProgramData\Results\" -Recurse -Destination ("C:\ProgramData\DFIR\Results\") + $Session.ComputerName.Split("."[0]) + "_" + (Get-Date).ToString("yyyyMMdd_HHmmss")
+            & Copy-Item -FromSession $Session -Path "C:\ProgramData\DFIR\Results\" -Recurse -Destination ("C:\ProgramData\DFIR\Results\") + $Session.ComputerName.Split("."[0]) + "_" + (Get-Date).ToString("yyyyMMdd_HHmmss")
             Invoke-Command -Session $Session -ScriptBlock {Remove-Item -Path "C:\ProgramData\Results" -Force -Recurse}
         }
         Get-Job | Stop-Job
